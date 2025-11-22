@@ -10,7 +10,7 @@ export default function App() {
     e.preventDefault();
     setLoading(true);
     try {
-      const result = await axios.post('http://localhost:3000', { url }, {
+      const result = await axios.post(`${import.meta.env.BCKND_URL}/`, { url }, {
         headers: { 'Content-Type': 'application/json' },
       });
       setNewLink(result.data.newLink);
