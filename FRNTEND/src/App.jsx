@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import.meta.env.VITE_BACKEND_URL
 
 export default function App() {
   const [url, setUrl] = useState('');
@@ -10,7 +11,7 @@ export default function App() {
     e.preventDefault();
     setLoading(true);
     try {
-      const result = await axios.post(`${import.meta.env.BCKND_URL}/`, { url }, {
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/`, { url }, {
         headers: { 'Content-Type': 'application/json' },
       });
       setNewLink(result.data.newLink);
