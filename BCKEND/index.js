@@ -5,7 +5,8 @@ const shortenUrl = require('shorten-url');
 const app = express();
 
 app.use(cors({
-    origin:'http://localhost:5173'
+    origin:['http://localhost:5173',
+    'https://mrk-url-shortner.vercel.app']
 }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
